@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         handwriting: ["Merienda", "cursive"],
+        inter: ["Inter"],
       },
       container: {
         center: true,

@@ -34,7 +34,7 @@ const NavbarMenu = [
 ];
 const Navbar = () => {
   return (
-    <div className=" text-white py-3 md:py-8">
+    <div className=" text-white py-3 md:py-8 ">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 >
                   <a
                     href={item.link}
-                    className="inline-block text-base font-semibold py-2 px-3 uppercase"
+                    className="inline-block font-inter font-semibold py-2 px-3 uppercase text-xl" 
                   >
                     {item.title}
                   </a>

@@ -2,7 +2,6 @@ import React from "react";
 import Fanta1 from "../assets/fanta1.png";
 import Fanta2 from "../assets/fanta2.png";
 import Fanta3 from "../assets/fanta3.png";
-import { FaWhatsapp } from "react-icons/fa";
 import { UpdateFollower } from "react-mouse-follower";
 import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import Navbar from "../components/Navbar";
@@ -188,54 +187,53 @@ const Hero = () => {
               </motion.div>
 
               {/* Headphone list switcher */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
-                className="grid grid-cols-3 gap-10"
-              >
-                {headphoneData.map((item) => {
-                  return (
-                    <UpdateFollower
-                      mouseOptions={{
-                        backgroundColor: item.bgColor,
-                        zIndex: 9999,
-                        followSpeed: 0.5,
-                        scale: 5,
-                        text: "View Details",
-                        textFontSize: "3px",
-                      }}
-                    >
-                      <div
-                        key={item.id}
-                        onClick={() => handleActiveData(item)}
-                        className="cursor-pointer space-y-3 hover:scale-105 transition-all"
-                      >
-                        <div className="flex justify-center">
-                          <img
-                            src={item.image}
-                            alt=""
-                            className={`w-[80px] img-shadow ${
-                              activeData.image === item.image
-                                ? "opacity-100 scale-110"
-                                : "opacity-50"
-                            }`}
-                          />
-                        </div>
-                        <div className="!mt-6 space-y-1 text-center">
-                          <p className="text-base line-through opacity-50">
-                            {item.price}
-                          </p>
-                          <p className="text-xl font-bold">{item.price}</p>
-                          {/* <p className="text-xs font-normal text-nowrap">
-                            {item.modal}
-                          </p> */}
-                        </div>
-                      </div>
-                    </UpdateFollower>
-                  );
-                })}
-              </motion.div>
+              {/* Headphone list switcher */}
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
+  className="grid grid-cols-3 gap-8 items-end justify-items-center mt-6"
+>
+  {headphoneData.map((item) => (
+    <UpdateFollower
+      key={item.id}
+      mouseOptions={{
+        backgroundColor: item.bgColor,
+        zIndex: 9999,
+        followSpeed: 0.5,
+        scale: 5,
+        text: "View Details",
+        textFontSize: "3px",
+      }}
+    >
+      <div
+        onClick={() => handleActiveData(item)}
+        className="cursor-pointer flex flex-col items-center hover:scale-105 transition-transform"
+      >
+        {/* Equal height image container for alignment */}
+        <div className="h-[120px] flex items-end">
+          <img
+            src={item.image}
+            alt={item.title}
+            className={`w-[70px] transition-all duration-300 img-shadow ${
+              activeData.id === item.id
+                ? "opacity-100 scale-110"
+                : "opacity-60"
+            }`}
+          />
+        </div>
+
+        {/* Text below image */}
+        <div className="mt-6 text-center space-y-1">
+          <p className="text-lg font-bold">{item.price}</p>
+          {/* Optional: show model name */}
+          {/* <p className="text-xs text-white/50">{item.modal}</p> */}
+        </div>
+      </div>
+    </UpdateFollower>
+  ))}
+</motion.div>
+
             </div>
           </div>
 
@@ -259,7 +257,7 @@ const Hero = () => {
                 }}
                 src={activeData.image}
                 alt=""
-                className="w-[150px] md:w-[200px] xl:w-[350px] img-shadow relative z-10"
+                className={`img-shadow relative z-10 `}
               />
             </AnimatePresence>
             <AnimatePresence mode="wait">
@@ -282,12 +280,7 @@ const Hero = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-          {/* ______ WhatsApp Icon ______ */}
-          <div className="text-3xl text-white fixed bottom-10 right-10 hover:rotate-[360deg] duration-500 z-[99999] mix-blend-difference">
-            <a href="">
-              <FaWhatsapp />
-            </a>
-          </div>
+          
         </div>
       </motion.section>
     </>

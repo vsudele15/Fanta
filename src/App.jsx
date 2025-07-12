@@ -19,10 +19,9 @@ const App = () => {
         }}
       >
         <Hero />
-        <Products />
         <Banner />
-        <BannerText />
-        <Blogs />
+         <BannerText />
+        <Products />
         <FAQ />
         <Footer />
       </UpdateFollower>
