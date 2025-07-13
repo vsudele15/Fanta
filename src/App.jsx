@@ -7,6 +7,7 @@ import BannerText from "./components/Banner/BannerText";
 import Blogs from "./components/Blogs/Blogs";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
+import ProductCarousel from "./components/Products/ProductCarousel";
 
 const App = () => {
   return (
@@ -20,8 +21,8 @@ const App = () => {
       >
         <Hero />
         <Banner />
-         <BannerText />
-        <Products />
+        <BannerText />
+        <ProductCarousel />
         <FAQ />
         <Footer />
       </UpdateFollower>

@@ -7,11 +7,16 @@ export default {
         primary: "#f97316",
       },
 
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
+      },
+
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         handwriting: ["Merienda", "cursive"],
         inter: ["Inter"],
       },
+
       container: {
         center: true,
         padding: {

@@ -34,7 +34,7 @@ const Footer = () => {
               </p>
               <p className="flex items-center gap-2 mt-2">
                 {" "}
-                <FaMapLocation /> Noida, Uttar Pradesh
+                <FaMapLocation /> California, USA
               </p>
             </div>
           </motion.div>
